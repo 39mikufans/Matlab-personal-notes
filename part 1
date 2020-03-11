@@ -1,0 +1,41 @@
+Matlab中可以不需要宣告(default)变量的类型，默认的变量类型是double
+可使用的变量类型有：
+multidimensional array：logical(逻辑型)、char(字符型)、numeric(数值型)、cell(胞元数组)、struct(结构型)
+scalar：function handle(函数句柄)
+其中numeric包括从int8到int64，uint8到uint64以及single和double类型，常用
+
+部分常用关键字(keywords)有
+ans：answer
+i,j：complex number虚数
+Inf：∞
+eps：趋于0的极小数
+NaN：not a number，表示结果无法被表示为数值
+pi：圆周率π
+
+如果代码为
+cos='This string.';
+cos(8)
+输出结果为r，因为在这里cos从function变成了字符变量，cos(8)输出第8个位置的字符
+*所以要注意变量和关键字不能混淆*
+
+Matlab中的命名使用规则：
+如果命名相同，程序会优先使用高层级的类型来处理。层级从高到低为：
+variable → built-in function → subfunction → private function(如MEX-file，P-file，M-file)
+其中built-in function就包括了关键字
+
+格式(format)种类：
+short小数点后显示四位；long小数点后显示十五位；
+shortE显示四位小数的科学记数法；longE显示十五位小数的科学记数法
+hex十六进制；rat有理数（分数）
+
+语句后跟符号;不显示运算结果，最后一次性输出
+按方向键 ⬆️可寻找上一条指令(command)
+
+who ———— 查看工作区(workspace)中所有的变量
+whos ———— 查看工作区中所有的变量及其具体信息
+help * ———— 查看对*的帮助文档
+iskeyword ———— 查看所有的关键字
+clear * ———— 把*的定义和信息清空
+clear ———— 清空工作区中所有变量
+clc ———— 清空命令行窗口(command windows)中所有已显示内容
+format * ———— 将输出结果的格式更改为*
