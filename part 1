@@ -1,3 +1,17 @@
+一般的运算指令都在命令行窗口中进行
+常见的运算符号： + - * / ^ 遵循运算法则
+
+常见的函数命令
+三角函数：sin() cos() tan()
+对数函数：log()——计算自然底数的对数 log10()——以10为底的对数
+指数函数：exp() sqrt()
+
+复杂算式可以分布计算
+sin(cos(pi))等效于
+cos(pi);sin(ans)
+
+赋值命令“=”
+想要对某变量直接进行赋值可以使用 A=10
 Matlab中可以不需要宣告(default)变量的类型，默认的变量类型是double
 可使用的变量类型有：
 multidimensional array：logical(逻辑型)、char(字符型)、numeric(数值型)、cell(胞元数组)、struct(结构型)
