@@ -1,0 +1,35 @@
+可以使用edit(which(function.m))指令打开matlab内置函数function的脚本查看
+内置函数的function name都和file name一致
+
+此处以内置均值函数为例，一个完整的函数脚本应该有：
+function y = mean(x)                     一定要有‘function’作为关键字，y是output，mean是function name，x是input
+%MEAN函数，用于计算平均值或期望值            写注解是好习惯！
+……
+if nargin==2 && ischar(dim)             函数脚本的code
+    flag = dim
+elseif nargin < 3
+    flag = 'default';
+……
+
+函数指针
+可以利用指针，直接将某个变量指向某个特定函数
+这样可以在后面直接使用该变量作为函数
+
+【例1】计算自由落体的坐标
+function x = freebody(x0,v0,t)
+%计算从x0位置，以初速度v0下落t时间后的位置坐标
+x = x0 + v0.*t + 1/2*9.8*t.*t;
+%在这里使用点乘是为了方便同时计算多组数据得到结果
+【例2】
+function [a F] = acc(v2,v1,t2,t1,m)
+%计算匀变速直线运动中的加速度及合外力大小
+a = (v2-v1)./(t2-t1);
+F = m.*a;
+
+[Acc Force] = acc(20,10,5,4,1)
+%为得到相应的output，input也要用函数脚本中的形式给出
+【例3】
+f = @(x) exp(-2*x);
+%这里的@(x)指明input，并将f指向函数exp(-2*x)
+x = 0:0.1:2;
+plot(x,f(x));
