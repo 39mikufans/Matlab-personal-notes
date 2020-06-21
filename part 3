@@ -1,0 +1,80 @@
+matlab脚本一般被保存为<file>.m形式，matlab依照行顺序执行脚本程序
+脚本命名限制：不能以数字开头，大小写有差别
+可以通过%进行把改行改为注解而不执行，通过%%将程序分块执行，只执行两个%%符号之间的脚本
+
+编写脚本的一些小tips：
+每次编写和修改前使用clear all和close all指令来清楚所有变量的记忆值和所有图形，以及用clc清空命令台
+在不希望执行结果被显示的语句后加 ; 符号
+使用 ... 在语句结尾来换行
+执行程序宕机时用ctrl+c来强制停止继续执行（matlab左下角持续显示busy时大概率宕机了）
+
+结构化程序语言：
+if，elseif，else
+for
+switch，case
+while
+break
+continue
+end
+pause
+return
+
+逻辑判断语言：
+<,<=,>,>=,==,~=(≠),&&(且),||(或)   返回值只有1（true）和0（false）两种情况
+
+【if,elseif,else】
+if condition1            %condition是判断，statement是执行
+       statement1
+elseif condition2        %如果if的判断结果为false，且elseif的判断结果为true，则执行statement2
+       statement2
+else                     %如果if和elseif的判断结果都为false，则执行else下的内容
+       statement3
+end
+
+【for】
+for variable=start:increment:end         %从变量为start的值开始，步长为increment，一直执行直到变量值为end为止
+    commands                             %根据步长跳过的值会被记录为0，如果想不显示0，可以最后disp(variable(start:increment:end))
+end
+
+【switch】
+switch expression        %以expression的变量，检测其对应哪个case代表的值，来决定执行什么操作
+case value1
+     statement1
+case value2
+     statement2
+otherwise
+     statement
+end
+
+【while】
+while condition          %一直执行statement直到condition结果为false
+      statement          %(当condition为false时，statement不会再执行一次，直接end！）
+end
+
+【例1】
+for i=1:10
+    x=linspace(0,10,101);
+    plot(x,sin(x+i));
+    print(gcf,'-deps',strcat('plot',num2str(i),'.ps'));
+end
+【例2】
+input_num=1;
+switch input_num
+case -1
+    disp('negative 1');
+case 0
+    disp('zero');
+case 1
+    disp('positive 1');
+otherwise
+    disp('other value');
+end
+【例三】
+tic                            %(tic-toc)指令用于计算运行该程序所需要的时间
+A=zeros(2000,2000);            %预宣告（为了节约程序计算的时间，在程序中预先宣告变量的规模）
+for ii=1:size(A,2)
+    for jj=1:size(A,2)
+        A(ii,jj)=ii+jj
+    end
+end
+toc
