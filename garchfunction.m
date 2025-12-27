@@ -1,5 +1,4 @@
 function garchfun()
-%14917118 何祎航
 [data,txt]=xlsread('601857.csv');
 m=txt(2:49,1);
 t=datetime(m);
