@@ -1,6 +1,5 @@
 function price=LookbackMC(s0,r,T,sigma,pf,N,M)
 %用蒙特卡洛模拟回望看涨期权
-%14917118 何祎航
 %pf：支付函数；T：到期时间；r：无风险利率；sigma：波动率
 %N：时间维度上的分割点数；M：空间维度上的分割点数
 dt=T/N;
