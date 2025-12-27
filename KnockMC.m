@@ -2,7 +2,6 @@ function price=KnockMC(s0,r,T,sigma,pf,N,M,H)
 %用蒙特卡洛模拟向上敲出期权
 %pf：支付函数；T：到期时间；r：无风险利率；sigma：波动率
 %N：时间维度上的分割点数；M：空间维度上的分割点数
-%14917110唐雯洁
 dt=T/N;
 s=zeros(M,N+1);
 s(:,1)=s0;%初始价格
