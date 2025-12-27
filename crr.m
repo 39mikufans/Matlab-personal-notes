@@ -1,6 +1,5 @@
 function price=crr(T,N,sigma,S,r,K)
 %二叉树定价法绘制欧式看涨期权价格与二叉树期数变化的图形
-%14917118 何祎航
 V2=zeros(N,1);
 pf=@(x) max(x-K,0);
 for m=1:N
