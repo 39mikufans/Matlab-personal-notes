@@ -1,6 +1,5 @@
 function price=AMDownPDE(T,S0,K,sigma,r,N,M)
 %显格式有限差分求美式看跌的价格
-%14917118 何祎航
 dt=T/N;
 ds=(K+S0)/M;
 %确定股票价格步长和时间步长，估计价格越接近理论真实值
