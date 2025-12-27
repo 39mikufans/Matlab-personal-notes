@@ -1,6 +1,5 @@
 function xirr=XIRReturn(Cashflow,Cashflowtime)
 %计算时间不均匀的现金流的内部收益率
-%14917118 何祎航
 %Cashflow=[-10000, 2500, 2000, 3000, 4000]；
 %Cashflowtime=['01/12/2007'
 %                '02/14/2008'
