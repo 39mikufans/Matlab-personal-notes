@@ -1,6 +1,5 @@
 function x0=bisection(f,int1,int2,err)
 %二分法求函数的根,其中f是函数表达式，int1和int2是区间端点，err是精度要求
-%14917118 何祎航
 fl=f(int1);fr=f(int2);
 if fl==0     %判断两端点是否为零点
     x0=int1;
